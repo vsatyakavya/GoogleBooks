@@ -1,8 +1,8 @@
 import React from "react"
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Wrapper from "./components/Wrapper"
-import Books from "./pages/Books"
-import SavedBooks from "./pages/SavedBooks"
+import Search from "./pages/Search"
+import Saved from "./pages/Saved"
 import Nav from "./components/Nav"
 
 function App(){
@@ -11,9 +11,9 @@ function App(){
             <div>
               <Nav />
               <Wrapper>
-              <Route exact path="/" component={Books} />
-              <Route exact path="/books" component={Books} />
-              <Route exact path="/savedbooks" component={SavedBooks} />
+              <Route exact path="/" component={Search} />
+              <Route exact path="/books" component={Search} />
+              <Route exact path="/savedbooks" component={Saved} />
 
 
 

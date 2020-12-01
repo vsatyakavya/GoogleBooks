@@ -14,7 +14,7 @@ function Nav() {
             <Link
               to="/"
               className={
-                window.location.pathname === "/" || window.location.pathname === "/books"
+                window.location.pathname === "/" || window.location.pathname === "/search"
                   ? "nav-link active"
                   : "nav-link"
               }
@@ -24,8 +24,8 @@ function Nav() {
           </li>
           <li className="nav-item">
             <Link
-              to="/savedbooks"
-              className={window.location.pathname === "/savedbooks" ? "nav-link active" : "nav-link"}
+              to="/saved"
+              className={window.location.pathname === "/saved" ? "nav-link active" : "nav-link"}
             >
               Your Books
             </Link>
