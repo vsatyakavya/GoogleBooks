@@ -5,6 +5,7 @@ import { Link } from "react-router-dom"
 import { Col, Row, Container } from "../components/Grid"
 import { Input, Btn } from "../components/Form"
 import { List, ListItem } from "../components/List"
+import BookCard from "../components/BookCard"
 
 function Search() {
     const [books, setBooks] = useState([])
@@ -42,7 +43,7 @@ function Search() {
 
     return (
         
-            <Container fluid>
+            <Container fluid  style={{background:"#ffffff"}}>
                 <Row>
                     <Col size="md-10">
                         <form>
@@ -64,20 +65,26 @@ function Search() {
                     <Col size="md-10">
                        
                         {books.length? (
-                            <List>
+                            <div>
                                 {books.map(book => (
-                                    <ListItem key={book._id}
-                                        thumbnail={book.volumeInfo.imageLinks.smallThumbnail}
-                                         href= {book.volumeInfo.canonicalVolumeLink}>
+                                    <BookCard key={book._id}
+                                        thumbnail={book.volumeInfo.imageLinks.thumbnail}
+                                         href= {book.volumeInfo.canonicalVolumeLink}
+                                         title={book.volumeInfo.title}
+                                         authors ={book.volumeInfo.authors}>
+
+
 
                                         {/* <a href={book.link}><button>view  book</button></a> */}
                                        
                                          onClick={handleSaveBook}
 
 
-                                    </ListItem>
+                                    </BookCard>
+                                    
                                 ))}
-                            </List>
+                            </div>
+                            
                         ) : (
                                 <h3>No results</h3>
                             )}
