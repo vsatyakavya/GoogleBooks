@@ -1,8 +1,26 @@
 import React from "react";
 import "./style.css";
 import {Btn} from "../Form"
+import API from "../../utils/API";
+
+
+
 
 function BookCard(props) {
+  function onSave() {
+    API.saveBook({
+      title: props.title,
+      authors: props.author,
+      description: props.description,
+      image:props.thumbnail,
+      link:props.href,
+  
+    })
+      .then(res => console.log("done"))
+      .catch(err => console.log(err));
+  
+  }
+
   return (
     <div className="card">
       <div className="img-container">
@@ -18,7 +36,7 @@ function BookCard(props) {
 
             
             </a>
-            <button className="btn btn-secondary"  onClick={props.onClick}>Save</button>
+            <button className="btn btn-secondary"  onClick={onSave}>Save</button>
 
         
       
