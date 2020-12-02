@@ -36,7 +36,7 @@ function Search() {
         event.preventDefault();
         if(search.title) {
             API.getGoogleBooks(search.title)
-                .then(res => setBooks(res.data.items),
+                .then(res => setBooks(res.data.items||[]),
                 console.log(books)
                 
                 )
@@ -87,8 +87,8 @@ function Search() {
                                 {books.map(book => (
                                                         
 
-                                    <BookCard key={book.id}
-                                        thumbnail={book.volumeInfo.imageLinks.thumbnail}
+                                    <BookCard key={book.id} type="save"
+                                        thumbnail={book.volumeInfo.imageLinks?.thumbnail}
                                          href= {book.volumeInfo.canonicalVolumeLink}
                                          title={book.volumeInfo.title}
                                          authors ={book.volumeInfo.authors}

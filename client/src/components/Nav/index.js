@@ -21,7 +21,7 @@ function Nav() {
           </li>
           <li className="nav-item">
             <Link className="navbar-brand"
-              to="/saved"
+              to="/savedbooks"
             
             >
               Your Books

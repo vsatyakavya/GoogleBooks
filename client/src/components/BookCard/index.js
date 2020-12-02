@@ -10,12 +10,19 @@ function BookCard(props) {
   function onSave() {
     API.saveBook({
       title: props.title,
-      authors: props.author,
+      authors: props.authors,
       description: props.description,
       image:props.thumbnail,
       link:props.href,
   
     })
+      .then(res => console.log("done"))
+      .catch(err => console.log(err));
+  
+  }
+
+  function onDelete() {
+    API.deleteBook(props.id)
       .then(res => console.log("done"))
       .catch(err => console.log(err));
   
@@ -36,7 +43,8 @@ function BookCard(props) {
 
             
             </a>
-            <button className="btn btn-secondary"  onClick={onSave}>Save</button>
+            <button className="btn btn-secondary"  onClick={props.type== "save"?onSave:onDelete}>Save</button>
+            
 
         
       
