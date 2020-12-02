@@ -4,12 +4,12 @@ import Wrapper from "./components/Wrapper"
 import Search from "./pages/Search"
 import Saved from "./pages/Saved"
 import Nav from "./components/Nav"
-import Background from "./Assets/background.jpg"
+
 
 function App(){
     return(
         <Router>
-            <div>
+            <div >
               <Nav />
               <Wrapper>
               <Route exact path="/" component={Search} />

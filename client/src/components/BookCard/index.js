@@ -2,6 +2,7 @@ import React from "react";
 import "./style.css";
 import {Btn} from "../Form"
 import API from "../../utils/API";
+import {Link} from "react-router-dom"
 
 
 
@@ -43,10 +44,14 @@ function BookCard(props) {
 
             
             </a>
-            <button className="btn btn-secondary"  onClick={props.type== "save"?onSave:onDelete}>Save</button>
-            
 
-        
+        {props.type ==="save" ?
+        (
+          <button className ="btn btn-secondary" onClick={onSave}>Save</button>
+        ):(
+          <button className ="btn btn-secondary" onClick={onDelete}>Delete</button>
+
+        )}
       
       </div>
       

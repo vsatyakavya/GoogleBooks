@@ -17,12 +17,13 @@ function Detail(props) {
   }, [])
 
   return (
-    <Container>
+      <div >
+    <Container >
     <Row>
-        <Col size="md-10">
+        <Col size="md-12">
            
             {books.length? (
-                <div>
+                <div style={{ display: "flex", flexWrap: "wrap" }}>
                     {books.map(book => (
                                             
 
@@ -63,6 +64,7 @@ function Detail(props) {
 
 
 </Container>
+</div>
     );
   }
 
