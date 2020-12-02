@@ -63,11 +63,13 @@ function Search() {
                                     placeholder="Title (required)"
 
                                 />
+                                <div className="text-center">
                                 <Btn
 
                                     disabled={!(search.title)}
                                     onClick={handleFormSubmit}
                                 >Submit</Btn>
+                                </div>
                             </form>
                         </Col>
                     </Row>

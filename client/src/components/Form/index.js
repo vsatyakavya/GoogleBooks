@@ -14,7 +14,7 @@ export function Input(props) {
 
 export function Btn(props) {
   return (
-    <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-success">
+    <button {...props} style={{marginBottom: 10 }} className="btn btn-success">
       {props.children}
     </button>
   );
